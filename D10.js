@@ -468,7 +468,14 @@ esercizio26();
   ***
  
 */
-
+function halftree (numero) {
+  let stringa = "*";
+  for (let i=1; i<=numero; i++) {
+    let riga = stringa.repeat(i);
+    console.log(riga);
+  }
+}
+halftree(3);
 /* ESERCIZIO 28
   Crea una funzione chiamata "tree" che riceve un numero come parametro e costruisce un albero di "*" (asterischi) dell'altezza fornita.
  
@@ -477,14 +484,39 @@ esercizio26();
  
     *
    ***
-  *****
- 
-*/
+  ***** */
+  function tree (numero) {
+  let stringa = "*";
+  let vuoto = " ";
+  for (let i=1; i<=numero; i++) {
+    let spazibianchi= numero-i;
+    let serie = 2*i-1;
+    let riga = vuoto.repeat(spazibianchi)+stringa.repeat(serie);
+    console.log(riga);
+  }
+}
+tree(6);
 
 /* ESERCIZIO 29
   Crea una funzione chiamata "isItPrime" che riceve un numero come parametro e ritorna true se il numero fornito è un numero primo.
 */
-
+function isItPrime (numero) { 
+ if (numero<2) { 
+  return(false);
+ }
+    for (let i=2; i<=Math.sqrt(numero); i++) {
+      if (numero%i===0) {
+        return(false);
+      }
+    }
+  
+ return(true);
+}
+console.log(isItPrime(1));
+console.log(isItPrime(2));
+console.log(isItPrime(3));
+console.log(isItPrime(10));
+console.log(isItPrime(121));
 /* Questo array viene usato per gli esercizi. Non modificarlo. */
 
 
